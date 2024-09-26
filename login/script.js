@@ -33,11 +33,11 @@ loginForm.addEventListener('submit', function(event) {
     const password = document.getElementById('password').value;
 
     if (users[username] === undefined) {
-        showModal("Usuário não encontrado.");
+        showModal("Uma sombra paira sobre o teclado... 'Usuário não encontrado', diz a tela. Mas será que realmente está oculto? O professor, detentor de conhecimento, sabe... Talvez, um fragmento de identidade, algo. Procure entre os dados... o que ele sabe? A resposta pode no mais simples a se esperar.");
     } else if (users[username] !== password) {
-        showModal("Senha incorreta.");
+        showModal("As palavras tremem na tela... 'Senha incorreta', ecoa no silêncio do laboratório. Mas algo está certo, uma verdade oculta sob o erro. O professor, em sua sabedoria, criou uma chave a partir de algo simples, algo essencial, algo que o sistema do IFSP deu a você. Talvez esteja mais perto do que imagina, tão básica que quase passa despercebida. Olhe mais de perto... o que foi dado a você desde o primeiro acesso?");
     } else {
-        showModal("Login bem-sucedido!");
+        showModal("O portal se abre... 'Login bem-sucedido!', anunciam as sombras da interface. Mas a jornada apenas começou. Uma nova fase surge no horizonte. O destino? A enigmática ROTA que você é questionado(a). É lá que os segredos aguardam, ocultos entre respostas... ou serão mais perguntas? Cada escolha pode ser uma chave. Agora, sua busca começa de verdade. O que irá descobrir quando atravessar o próximo limiar?");
     }
 });
 

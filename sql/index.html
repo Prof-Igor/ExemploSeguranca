@@ -12,9 +12,8 @@
 
         <div class="example">
             <h2>Exemplo 1: Autenticação de Usuário</h2>
-            <p>Quando um aplicativo permite que os usuários insiram seu nome de usuário e senha, se não forem feitos de forma segura, um invasor pode tentar usar uma injeção SQL como:</p>
-            <code>admin' --</code>
-            <p>Tente inserir a entrada acima para "Nome de Usuário" para ver a vulnerabilidade.</p>
+            <p>Quando um aplicativo permite que os usuários insiram seu nome de usuário e senha, se não forem feitos de forma segura, um invasor pode tentar usar uma injeção SQL.</p>
+            <p> "O usuário está diante de você, no inglês o padrão é seguido. A senha, uma prova a ser verificada. Segue os padrões? É robusta, combina letras, números, símbolos? Ou se perde na simplicidade? E se não validar? Simplesmente comentar? Se eu não perguntar a resposta deve ser sim, certo?"</p>
             <input type="text" id="input1" placeholder="Digite seu nome de usuário">
             <button onclick="checkInput(1)">Enviar</button>
             <div class="feedback" id="feedback1"></div>
@@ -24,9 +23,8 @@
             <h2>Exemplo 2: Pesquisa de Produtos</h2>
             <p>Um aplicativo que permite que os usuários pesquisem produtos pode ter a seguinte consulta SQL vulnerável:</p>
             <code>SELECT * FROM produtos WHERE nome = '$nome'</code>
-            <p>Um atacante pode usar a entrada:</p>
-            <code>produto'; DROP TABLE produtos; --</code>
-            <p>Tente inserir a entrada acima para "Nome do Produto" para ver a vulnerabilidade.</p>
+            <p>Um atacante pode usar a entrada para enviar um outro comando como DROP TABLE.</p>
+            <p>"As linhas de código aguardam seu comando... 'Apague o produto', murmura o sistema. Mas não basta apenas um, o eco da ordem pede mais. Apague tudo, cada vestígio, cada dado que armazena os produtos. Limpe a memória, desfaça o registro. Quando o comando for executado, não restará nada... apenas o vazio onde um dia existiu informação."</p>
             <input type="text" id="input2" placeholder="Digite o nome do produto">
             <button onclick="checkInput(2)">Enviar</button>
             <div class="feedback" id="feedback2"></div>
@@ -36,9 +34,7 @@
             <h2>Exemplo 3: Exibição de Detalhes do Usuário</h2>
             <p>Um aplicativo que exibe detalhes do usuário pode usar uma consulta SQL como:</p>
             <code>SELECT * FROM usuarios WHERE id = '$id'</code>
-            <p>Um invasor pode tentar:</p>
-            <code>1 OR 1=1</code>
-            <p>Tente inserir a entrada acima para "ID do Usuário" para ver a vulnerabilidade.</p>
+            <p>"O código te espera, mas a pergunta persiste: 'Você pode acessar?' O que está além do seu controle, aquilo que não é sobre você? Lembre-se, em meio às variáveis e incertezas, há uma constante: 1 sempre é igual a 1. Será essa a chave, o valor que nunca muda? O que resta desvendar é o que está fora de seu alcance."</p>
             <input type="text" id="input3" placeholder="Digite o ID do usuário">
             <button onclick="checkInput(3)">Enviar</button>
             <div class="feedback" id="feedback3"></div>
