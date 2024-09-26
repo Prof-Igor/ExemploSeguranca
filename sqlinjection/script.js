@@ -1,3 +1,10 @@
+function b64DecodeUnicode(str) {
+    // Going backwards: from bytestream, to percent-encoding, to original string.
+    return decodeURIComponent(atob(str).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+}
+
 function checkInput(exampleNumber) {
     let userInput;
     let correctInput;
@@ -22,7 +29,7 @@ function checkInput(exampleNumber) {
 
     const feedbackDiv = document.getElementById(`feedback${exampleNumber}`);
     if (userInput.includes(atob(correctInput))) {
-        feedbackDiv.innerText = "Acertou! Você identificou a vulnerabilidade. Dica: " + atob(dica);
+        feedbackDiv.innerText = "Acertou! Você identificou a vulnerabilidade. Dica: " + b64DecodeUnicode(dica);
     } else {
         feedbackDiv.innerText = "Tente novamente.";
     }

@@ -22,6 +22,13 @@ const users = {
     "Mayara Matilde Cardoso de Freitas": "SP3115178"
 };
 
+function b64DecodeUnicode(str) {
+    // Going backwards: from bytestream, to percent-encoding, to original string.
+    return decodeURIComponent(atob(str).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+}
+
 const loginForm = document.getElementById('loginForm');
 const modal = document.getElementById('modal');
 const modalMessage = document.getElementById('modalMessage');
@@ -38,7 +45,7 @@ loginForm.addEventListener('submit', function(event) {
     } else if (users[username] !== password) {
         showModal("As palavras tremem na tela... 'Senha incorreta', ecoa no silêncio do laboratório. Mas algo está certo, uma verdade oculta sob o erro. O professor, em sua sabedoria, criou uma chave a partir de algo simples, algo essencial, algo que o sistema do IFSP deu a você. Talvez esteja mais perto do que imagina, tão básica que quase passa despercebida. Olhe mais de perto... o que foi dado a você desde o primeiro acesso?");
     } else {
-        showModal(atob("TyBwb3J0YWwgc2UgYWJyZS4uLiAnTG9naW4gYmVtLXN1Y2VkaWRvIScsIGFudW5jaWFtIGFzIHNvbWJyYXMgZGEgaW50ZXJmYWNlLiBNYXMgYSBqb3JuYWRhIGFwZW5hcyBjb21lw6dvdS4gVW1hIG5vdmEgZmFzZSBzdXJnZSBubyBob3Jpem9udGUuIE8gZGVzdGlubz8gQSBlbmlnbcOhdGljYSBST1RBIHF1ZSB2b2PDqiDDqSBxdWVzdGlvbmFkbyhhKS4gw4kgbMOhIHF1ZSBvcyBzZWdyZWRvcyBhZ3VhcmRhbSwgb2N1bHRvcyBlbnRyZSByZXNwb3N0YXMuLi4gb3Ugc2Vyw6NvIG1haXMgcGVyZ3VudGFzPyBDYWRhIGVzY29saGEgcG9kZSBzZXIgdW1hIGNoYXZlLiBBZ29yYSwgc3VhIGJ1c2NhIGNvbWXDp2EgZGUgdmVyZGFkZS4gTyBxdWUgaXLDoSBkZXNjb2JyaXIgcXVhbmRvIGF0cmF2ZXNzYXIgbyBwcsOzeGltbyBsaW1pYXI/"));
+        showModal(b64DecodeUnicode("TyBwb3J0YWwgc2UgYWJyZS4uLiAnTG9naW4gYmVtLXN1Y2VkaWRvIScsIGFudW5jaWFtIGFzIHNvbWJyYXMgZGEgaW50ZXJmYWNlLiBNYXMgYSBqb3JuYWRhIGFwZW5hcyBjb21lw6dvdS4gVW1hIG5vdmEgZmFzZSBzdXJnZSBubyBob3Jpem9udGUuIE8gZGVzdGlubz8gQSBlbmlnbcOhdGljYSBST1RBIHF1ZSB2b2PDqiDDqSBxdWVzdGlvbmFkbyhhKS4gw4kgbMOhIHF1ZSBvcyBzZWdyZWRvcyBhZ3VhcmRhbSwgb2N1bHRvcyBlbnRyZSByZXNwb3N0YXMuLi4gb3Ugc2Vyw6NvIG1haXMgcGVyZ3VudGFzPyBDYWRhIGVzY29saGEgcG9kZSBzZXIgdW1hIGNoYXZlLiBBZ29yYSwgc3VhIGJ1c2NhIGNvbWXDp2EgZGUgdmVyZGFkZS4gTyBxdWUgaXLDoSBkZXNjb2JyaXIgcXVhbmRvIGF0cmF2ZXNzYXIgbyBwcsOzeGltbyBsaW1pYXI/"));
     }
 });
 
