@@ -1,25 +1,25 @@
 const users = {
-    "Gabrielly Leite de Macedo": "SP3115763",
-    "Giovanna Lima Ng": "SP3117961",
-    "João Victor Santos": "SP311662X",
-    "Kaio Damasceno de Oliveira": "SP3124517",
-    "Laura Jardim Santos": "SP3116697",
-    "Leonardo Koga Florentino": "SP3118614",
-    "Marcelo Gonçalves Diniz": "SP3115909",
-    "Maria Eduarda de Araujo Souza": "SP3115895",
-    "Mateus Hideki de Figueiredo Tamura": "SP3116191",
-    "Matheus Barbosa Silva": "SP311659X",
-    "Melissa Schiavone Cardoso": "SP311600X",
-    "Mirella Prado Santos": "SP3124568",
-    "Murillo Marinho Santos": "SP3115526",
-    "Murilo Silva Borges": "SP311564X",
-    "Rafael Gomes Messias": "SP3124819",
-    "Rafael Pires Goncalves": "SP3118754",
-    "Renan Trajano da Conceição": "SP3115887",
-    "Sara Martins Oliveira": "SP3120511",
-    "Thiago Akira Damasceno Taniguchi": "SP3115623",
-    "Vinicius Banos Cordeiro Santos": "SP3116484",
-    "Yasmin Catherinne Conceição Bastos": "SP3116212"
+    "Ana Clara Rodrigues Peres Marçal": "SP3117499",
+    "Ana Julia Tenorio de Jesus": "SP3115542",
+    "Ana Marcelia Oliveira Severo Pereira": "SP3116069",
+    "Any Gabriely Silva Moraes": "SP3118801",
+    "Bernardo de Castro Bertoldo": "SP3114775",
+    "Bruno Timoteo Silva": "SP3116042",
+    "Caique França dos Santos": "SP3118541",
+    "Carlos Eduardo da Conceicao Santos": "SP3116352",
+    "Daniel Expedito Vieira da Silv": "SP3116263",
+    "Enzo Maximino de Sousa Costa": "SP3118771",
+    "Eric Goncalves Rosa": "SP3116557",
+    "Felipe Begliomini Azali": "SP311595X",
+    "Fernando Pereira Filipe Duarte": "SP311872X",
+    "Guilherme de Melo Loredo": "SP3116891",
+    "Henrique Nagy de Freitas": "SP3121453",
+    "Henrique Paschero Cima": "SP3114546",
+    "Ian Jorge Martins": "SP3118673",
+    "Isabel Almeida Conceição": "SP3117138",
+    "João Pedro de Almeida Martins": "SP3115933",
+    "Marina de Araujo Trindade": "SP3115046",
+    "Mayara Matilde Cardoso de Freitas": "SP3115178"
 };
 
 const loginForm = document.getElementById('loginForm');
@@ -38,7 +38,7 @@ loginForm.addEventListener('submit', function(event) {
     } else if (users[username] !== password) {
         showModal("As palavras tremem na tela... 'Senha incorreta', ecoa no silêncio do laboratório. Mas algo está certo, uma verdade oculta sob o erro. O professor, em sua sabedoria, criou uma chave a partir de algo simples, algo essencial, algo que o sistema do IFSP deu a você. Talvez esteja mais perto do que imagina, tão básica que quase passa despercebida. Olhe mais de perto... o que foi dado a você desde o primeiro acesso?");
     } else {
-        showModal("O portal se abre... 'Login bem-sucedido!', anunciam as sombras da interface. Mas a jornada apenas começou. Uma nova fase surge no horizonte. O destino? A enigmática ROTA que você é questionado(a). É lá que os segredos aguardam, ocultos entre respostas... ou serão mais perguntas? Cada escolha pode ser uma chave. Agora, sua busca começa de verdade. O que irá descobrir quando atravessar o próximo limiar?");
+        showModal(atob("TyBwb3J0YWwgc2UgYWJyZS4uLiAnTG9naW4gYmVtLXN1Y2VkaWRvIScsIGFudW5jaWFtIGFzIHNvbWJyYXMgZGEgaW50ZXJmYWNlLiBNYXMgYSBqb3JuYWRhIGFwZW5hcyBjb21lw6dvdS4gVW1hIG5vdmEgZmFzZSBzdXJnZSBubyBob3Jpem9udGUuIE8gZGVzdGlubz8gQSBlbmlnbcOhdGljYSBST1RBIHF1ZSB2b2PDqiDDqSBxdWVzdGlvbmFkbyhhKS4gw4kgbMOhIHF1ZSBvcyBzZWdyZWRvcyBhZ3VhcmRhbSwgb2N1bHRvcyBlbnRyZSByZXNwb3N0YXMuLi4gb3Ugc2Vyw6NvIG1haXMgcGVyZ3VudGFzPyBDYWRhIGVzY29saGEgcG9kZSBzZXIgdW1hIGNoYXZlLiBBZ29yYSwgc3VhIGJ1c2NhIGNvbWXDp2EgZGUgdmVyZGFkZS4gTyBxdWUgaXLDoSBkZXNjb2JyaXIgcXVhbmRvIGF0cmF2ZXNzYXIgbyBwcsOzeGltbyBsaW1pYXI/"));
     }
 });
 
