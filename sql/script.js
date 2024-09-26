@@ -5,21 +5,24 @@ function checkInput(exampleNumber) {
     switch(exampleNumber) {
         case 1:
             userInput = document.getElementById('input1').value;
-            correctInput = "admin' --";
+            correctInput = "YWRtaW4nIC0t";
+            dica = "cHJvY3VyZQ==";
             break;
         case 2:
             userInput = document.getElementById('input2').value;
-            correctInput = "produto'; DROP TABLE produtos; --";
+            correctInput = "RFJPUCBUQUJMRSBwcm9kdXRvcw==";
+            dica = "bw==";
             break;
         case 3:
             userInput = document.getElementById('input3').value;
-            correctInput = "1 OR 1=1";
+            correctInput = "MSBPUiAxPTE=";
+            dica = "cHJvZmVzc29y";
             break;
     }
 
     const feedbackDiv = document.getElementById(`feedback${exampleNumber}`);
-    if (userInput === correctInput) {
-        feedbackDiv.innerText = "Acertou! Você identificou a vulnerabilidade.";
+    if (userInput.includes(atob(correctInput))) {
+        feedbackDiv.innerText = "Acertou! Você identificou a vulnerabilidade. Dica: " + atob(dica);
     } else {
         feedbackDiv.innerText = "Tente novamente.";
     }
