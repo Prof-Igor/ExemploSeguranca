@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos de SQL Injection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Vulnerabilidades de SQL Injection</h1>
+
+        <div class="example">
+            <h2>Exemplo 1: Autenticação de Usuário</h2>
+            <p>Quando um aplicativo permite que os usuários insiram seu nome de usuário e senha, se não forem feitos de forma segura, um invasor pode tentar usar uma injeção SQL como:</p>
+            <code>admin' --</code>
+            <p>Tente inserir a entrada acima para "Nome de Usuário" para ver a vulnerabilidade.</p>
+            <input type="text" id="input1" placeholder="Digite seu nome de usuário">
+            <button onclick="checkInput(1)">Enviar</button>
+            <div class="feedback" id="feedback1"></div>
+        </div>
+
+        <div class="example">
+            <h2>Exemplo 2: Pesquisa de Produtos</h2>
+            <p>Um aplicativo que permite que os usuários pesquisem produtos pode ter a seguinte consulta SQL vulnerável:</p>
+            <code>SELECT * FROM produtos WHERE nome = '$nome'</code>
+            <p>Um atacante pode usar a entrada:</p>
+            <code>produto'; DROP TABLE produtos; --</code>
+            <p>Tente inserir a entrada acima para "Nome do Produto" para ver a vulnerabilidade.</p>
+            <input type="text" id="input2" placeholder="Digite o nome do produto">
+            <button onclick="checkInput(2)">Enviar</button>
+            <div class="feedback" id="feedback2"></div>
+        </div>
+
+        <div class="example">
+            <h2>Exemplo 3: Exibição de Detalhes do Usuário</h2>
+            <p>Um aplicativo que exibe detalhes do usuário pode usar uma consulta SQL como:</p>
+            <code>SELECT * FROM usuarios WHERE id = '$id'</code>
+            <p>Um invasor pode tentar:</p>
+            <code>1 OR 1=1</code>
+            <p>Tente inserir a entrada acima para "ID do Usuário" para ver a vulnerabilidade.</p>
+            <input type="text" id="input3" placeholder="Digite o ID do usuário">
+            <button onclick="checkInput(3)">Enviar</button>
+            <div class="feedback" id="feedback3"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

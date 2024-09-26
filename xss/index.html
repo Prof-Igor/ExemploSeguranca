@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Vulnerável a XSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f0f8ff;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            margin: 20px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Insira o Código Mágico</h1>
+    <input type="text" id="userInput" placeholder="Insira seu código aqui...">
+    <button onclick="executeCode()">Executar</button>
+
+    <div id="message" style="margin-top: 20px;"></div>
+
+    <script>
+        function executeCode() {
+            var userInput = document.getElementById('userInput').value;
+            // Este eval é intencional para demonstrar vulnerabilidade de XSS
+            eval(userInput);
+        }
+
+        // Exemplo de código que pode ser inserido para mostrar a dica
+        // alert('A dica é: O caminho para o saber está em suas mãos!');
+    </script>
+</body>
+</html>

@@ -11,8 +11,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #000000;
-    color: white;
+    background-color: rgba(255, 255, 255, 0.349);
+    color: rgba(255, 255, 255, 0.349);
     font-family: "Edu AU VIC WA NT Hand", cursive;
     font-optical-sizing: auto;
     font-style: normal;
@@ -37,6 +37,12 @@ body {
     color: rgba(255, 255, 255, 0.219);
     opacity: .6;
 }
+
+a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: inherit; /* Usa a cor do texto atual, em vez do azul padrão */
+}
+
 
 .hover {
     position: fixed;
